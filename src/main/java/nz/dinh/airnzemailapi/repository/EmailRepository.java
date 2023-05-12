@@ -88,6 +88,7 @@ public class EmailRepository {
         int i = emails.indexOf(existing);
         existing.setStatus("SENT");
         emails.set(i, existing);
+        System.out.println("EMAIL " + id + " SENT!");
     }
 
     public void saveAsDraft(String id) {
@@ -97,5 +98,6 @@ public class EmailRepository {
         int i = emails.indexOf(existing);
         existing.setStatus("DRAFT");
         emails.set(i, existing);
+        System.out.println("DRAFT " + id + " CREATED!");
     }
 }

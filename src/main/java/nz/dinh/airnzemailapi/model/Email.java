@@ -1,16 +1,29 @@
 package nz.dinh.airnzemailapi.model;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 
 public class Email {
-    @NotEmpty private final String id;
-    @NotEmpty private String status;
-    @NotEmpty private String from;
-    @NotEmpty private String[] to;
-    @NotEmpty private String subject;
-    @NotEmpty private String body;
-    private String[] cc;
-    private String[] bcc;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    @NotEmpty
+    private String status;
+    @NotEmpty
+    private String from;
+    @NotEmpty
+    private String[] to;
+    @NotEmpty
+    private String subject;
+    @NotEmpty
+    private
+    String body;
+    private
+    String[] cc;
+    private
+    String[] bcc;
 
     public Email(String id, String status, String from, @NotEmpty String[] to, String subject, String body, String[] cc, String[] bcc) {
         this.id = id;
